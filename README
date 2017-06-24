@@ -1,0 +1,27 @@
+This program is a short script used for calculating hashes according to the
+formula used in CSE 12 with Gary Gillespie for the Hashtable assignment. This
+script can be invoked from the terminal using either
+
+python ascii_sum_calculator.py
+
+or by saying
+
+./ascii_sum_calculator.py
+
+If the program isn't working properly, use the UNIX command chmod to give all
+users execute permissions by saying
+
+chmod ugo+x ascii_sum_calculator.py
+
+The program allows for the user to enter in a table size of 2 or larger, then
+uses that given table size to calculate the correct values for strings entered
+in. The program finishes execution when EOF is typed (CTRL + D), when a
+KeyboardInterrupt signal is sent (CTRL + C), or if the user types q when
+prompted for a name to calculate.
+
+The table size can be inputted in octal, binary, hexadecimal, or in decimal,
+and the program will convert it to decimal without errors (so all you who like
+to use hex are good to go).
+
+Authored by Nate Browne, contact me at natebrowne@outlook.com with suggestions,
+bugs, etc.
