@@ -6,7 +6,7 @@
 # Contact: natebrowne@outlook.com
 
 """
-DESCRIPTION:
+PROGRAM DESCRIPTION:
 This program uses the hashing formulas provided in CSE 12 at UCSD with Gary
 Gillespie for the HashTable assignment (hw6). Finds the ASCII sum, initial
 location in the table, increment, and probe sequence for a user entered string
