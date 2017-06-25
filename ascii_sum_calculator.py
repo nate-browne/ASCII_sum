@@ -26,7 +26,7 @@ def find_ASCII(s):
 """
 Finds the initial hash location of the ASCII sum by modding the sum by the size
 of the table.
-param: num is the ASCII sum of the string to find location for
+param: a_sum is the ASCII sum of the string to find location for
 param: table_size is the size of the table
 return: the initial location
 """
@@ -37,7 +37,7 @@ def find_init(a_sum, table_size):
 """
 Finds the incrementor used in finding the probe sequence by modding the sum by
 the size of the table minus one and adding one to that total.
-param: num is the ASCII sum of the string to find the increment for
+param: a_sum is the ASCII sum of the string to find the increment for
 param: table_size is the size of the table
 return: the increment value
 """
@@ -49,8 +49,8 @@ def find_incr(a_sum, table_size):
 Finds the probe sequence and saves it into a list. Every value besides the first
 is found by adding the previous answer plus the increment total and modding that
 sum by the table size.
-param: num1 the number found from init
-param: num2 the number found from incr
+param: init the number found from init
+param: incr the number found from incr
 param: table_size is the size of the table
 return: a list containing the probe sequence
 """
