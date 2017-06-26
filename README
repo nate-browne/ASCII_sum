@@ -19,7 +19,7 @@ in. The program finishes execution when EOF is typed (CTRL + D), when a
 KeyboardInterrupt signal is sent (CTRL + C), or if the user types q when
 prompted for a name to calculate.
 
-The table size can be inputted in octal, binary, hexadecimal, or in decimal,
+The table size can be inputted in octal, hexadecimal, or in decimal,
 and the program will convert it to decimal without errors (so all you who like
 to use hex are good to go).
 
