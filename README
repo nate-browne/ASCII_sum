@@ -1,6 +1,6 @@
 This program is a short script used for calculating hashes according to the
 formula used in CSE 12 with Gary Gillespie for the Hashtable assignment. This
-script can be invoked from the terminal using either
+script can be invoked from the terminal in a UNIX system using either
 
 python ascii_sum_calculator.py
 
@@ -12,6 +12,10 @@ If the program isn't working properly, use the UNIX command chmod to give all
 users execute permissions by saying
 
 chmod ugo+x ascii_sum_calculator.py
+
+(Unfortunately, I'm not too sure how to get it working in a Windows environment.
+Perhaps one could open up a python interpreter and run it directly? If you use
+Windows, please let me know!)
 
 The program allows for the user to enter in a table size of 2 or larger, then
 uses that given table size to calculate the correct values for strings entered
