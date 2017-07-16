@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python2.7
 # Author: Nate Browne
 # Version: 1.6
 # Date: 24 June 2017
