@@ -94,7 +94,7 @@ def get_table_size():
     table_size = int(input("Enter a table size (prime numbers please!): "))
 
     # Error check to make sure the table size is non-negative
-    if table_size <= 1:
+    if table_size < 2:
 
       # Report error back to user
       print 'ERROR: Table size %d out of range!' % (table_size)
