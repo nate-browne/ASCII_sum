@@ -1,7 +1,8 @@
 #!/usr/bin/env python2.7
 # Author: Nate Browne
-# Version: 1.6
+# Version: 1.7
 # Date: 24 June 2017
+# Last Edited: 24 July 2017
 # File: ascii_sum_calculator.py
 # Contact: natebrowne@outlook.com
 
@@ -170,9 +171,7 @@ def main():
   # Catch the two types of errors thrown in the program
   except (EOFError, KeyboardInterrupt):
 
-    print
-    print "Exiting..."
-    print
+    print "\nExiting...\n"
 
 # standard boilerplate to run the main function
 if __name__ == '__main__':
