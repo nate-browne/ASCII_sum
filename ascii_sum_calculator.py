@@ -58,17 +58,16 @@ return: a list containing the probe sequence
 def find_probe_sequence(init, incr, table_size):
 
   # Use this variable later to figure out how many times to loop
-  count = 0
+  # Start at 2 because the table size will already be a minimum of 2
+  count = 2
 
   # Create list, append the first number, and increment count
   answer = []
   answer.append(init)
-  count += 1
 
   # Calculate the second number, append it, and increment the count
   to_append = (init + incr) % table_size
   answer.append(to_append)
-  count += 1
 
   # Use this while loop to figure out the rest of the probe sequence
   while count < table_size:
@@ -84,6 +83,8 @@ def find_probe_sequence(init, incr, table_size):
 
 """
 Function used once in main to get the desired size of the table from the user.
+Table size has to be at least 2 so that calculations aren't negative or do not
+involve dividing by zero.
 return: the size of the table desired by the user for use in the rest of the
 program
 """
@@ -94,7 +95,7 @@ def get_table_size():
     # Grab the table size
     table_size = int(input("Enter a table size (prime numbers please!): "))
 
-    # Error check to make sure the table size is non-negative
+    # Error check to make sure the table size at least of size 2
     if table_size < 2:
 
       # Report error back to user
@@ -152,7 +153,8 @@ def main():
       # Get the user's string to convert
       s = get_string()
 
-      # Calcuate the sum, initial value, increment, and probe sequence
+      # Calcuate the sum, initial value, increment, and probe sequence from the
+      # user's entered string
       a_sum = find_ASCII(s)
       init = find_init(a_sum, table_size)
       incr = find_incr(a_sum, table_size)
