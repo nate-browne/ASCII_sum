@@ -22,7 +22,7 @@ return: the ASCII sum
 """
 def find_ASCII(s):
 
-  return sum(map(ord, s))
+    return sum(map(ord, s))
 
 """
 Finds the initial hash location of the ASCII sum by modding the sum by the size
@@ -33,7 +33,7 @@ return: the initial location
 """
 def find_init(a_sum, table_size):
 
-  return a_sum % table_size
+    return a_sum % table_size
 
 """
 Finds the incrementor used in finding the probe sequence by modding the sum by
@@ -44,7 +44,7 @@ return: the increment value
 """
 def find_incr(a_sum, table_size):
 
-  return (a_sum % (table_size - 1)) + 1
+    return (a_sum % (table_size - 1)) + 1
 
 """
 Finds the probe sequence and saves it into a list. Every value besides the first
@@ -57,29 +57,29 @@ return: a list containing the probe sequence
 """
 def find_probe_sequence(init, incr, table_size):
 
-  # Use this variable later to figure out how many times to loop
-  # Start at 2 because the table size will already be a minimum of 2
-  count = 2
+    # Use this variable later to figure out how many times to loop
+    # Start at 2 because the table size will already be a minimum of 2
+    count = 2
 
-  # Create list, append the first number, and increment count
-  answer = []
-  answer.append(init)
+    # Create list and append the first number
+    answer = []
+    answer.append(init)
 
-  # Calculate the second number, append it, and increment the count
-  to_append = (init + incr) % table_size
-  answer.append(to_append)
+    # Calculate the second number and append it
+    to_append = (init + incr) % table_size
+    answer.append(to_append)
 
-  # Use this while loop to figure out the rest of the probe sequence
-  while count < table_size:
+    # Use this while loop to figure out the rest of the probe sequence
+    while count < table_size:
 
-    # Figure out the next number in the sequence and assign it to the variables
-    to_append = next_num = (to_append + incr) % table_size
+        # Figure out the next number in the sequence and assign it
+        to_append = next_num = (to_append + incr) % table_size
 
-    # Add the number to the list and increment the count up by 1
-    answer.append(next_num)
-    count += 1
+        # Add the number to the list and increment the count up by 1
+        answer.append(next_num)
+        count += 1
 
-  return answer
+    return answer
 
 """
 Function used once in main to get the desired size of the table from the user.
@@ -90,30 +90,30 @@ program
 """
 def get_table_size():
 
-  try:
+    try:
 
-    # Grab the table size
-    table_size = int(input("Enter a table size (prime numbers please!): "))
+        # Grab the table size
+        table_size = int(input("Enter a table size (prime numbers please!): "))
 
-    # Error check to make sure the table size at least of size 2
-    if table_size < 2:
+        # Error check to make sure the table size at least of size 2
+        if table_size < 2:
 
-      # Report error back to user
-      print 'ERROR: Table size %d out of range!' % (table_size)
+            # Report error back to user
+            print 'ERROR: Table size %d out of range!' % (table_size)
 
-      # Send error back to calling function to be sorted out
-      raise EOFError
+            # Send error back to calling function to be sorted out
+            raise EOFError
 
-  # Handle case of user entering in non-numeric input
-  except (NameError):
+    # Handle case of user entering in non-numeric input
+    except (NameError):
 
-    # Report error back to user
-    print 'ERROR: Invalid entry. Use a positive prime number please!'
+        # Report error back to user
+        print 'ERROR: Invalid entry. Use a positive prime number please!'
 
-    # Send error back to calling function to be sorted out
-    raise EOFError
+        # Send error back to calling function to be sorted out
+        raise EOFError
 
-  return table_size
+    return table_size
 
 """
 Function called in the while loop used to grab the string the user wants to
@@ -122,17 +122,18 @@ return: the user-entered string
 """
 def get_string():
 
-  # Grab the user's string to convert
-  usr_str = raw_input("Enter a string to find the ASCII sum of ('q' to quit): ")
+    # Grab the user's string to convert
+    usr_str = raw_input("Enter a string to find the ASCII sum of ('q' to quit):"
+                        " ")
 
-  # Exit condition for user entering 'q'
-  if usr_str.upper() == 'Q':
+    # Exit condition for user entering 'q'
+    if usr_str.upper() == 'Q':
 
-    # Throw an exception to end execution of the while loop in main
-    raise KeyboardInterrupt
-  else:
+        # Throw an exception to end execution of the while loop in main
+        raise KeyboardInterrupt
+    else:
 
-    return usr_str
+        return usr_str
 
 """
 Main function of program. Runs an infinite loop and delegates towards other
@@ -140,41 +141,43 @@ functions
 """
 def main():
 
-  print
+    print
 
-  try:
+    try:
 
-    # Get the user's table size
-    table_size = get_table_size()
+        # Get the user's table size
+        table_size = get_table_size()
 
-    # Start the infinite loop
-    while True:
+        # Start the infinite loop
+        while True:
 
-      # Get the user's string to convert
-      s = get_string()
+            # Get the user's string to convert
+            s = get_string()
 
-      # Calcuate the sum, initial value, increment, and probe sequence from the
-      # user's entered string
-      a_sum = find_ASCII(s)
-      init = find_init(a_sum, table_size)
-      incr = find_incr(a_sum, table_size)
-      sequence = find_probe_sequence(init, incr, table_size)
+            # Calcuate the sum, initial value, increment, and probe sequence
+            # from the user's entered string
+            a_sum = find_ASCII(s)
+            init = find_init(a_sum, table_size)
+            incr = find_incr(a_sum, table_size)
+            sequence = find_probe_sequence(init, incr, table_size)
 
-      # Display the results
-      print
-      print '*' * 55
-      print "The ASCII sum for %s is: %d." % (repr(s), a_sum)
-      print "The initial CSE 12 HashTable spot for %s is: %d." % (repr(s), init)
-      print "The incrementor for %s is: %d." % (repr(s), incr)
-      print "The probe sequence for %s is: %s." % (repr(s), repr(sequence))
-      print '*' * 55
-      print
+            # Display the results
+            print
+            print '*' * 55
+            print "The ASCII sum for %s is: %d." % (repr(s), a_sum)
+            print "The initial CSE 12 HashTable spot for %s is: %d." % (repr(s),
+                                                                        init)
+            print "The incrementor for %s is: %d." % (repr(s), incr)
+            print "The probe sequence for %s is: %s." % (repr(s),
+                                                         repr(sequence))
+            print '*' * 55
+            print
 
-  # Catch the two types of errors thrown in the program
-  except (EOFError, KeyboardInterrupt):
+    # Catch the two types of errors thrown in the program
+    except (EOFError, KeyboardInterrupt):
 
-    print "\nExiting...\n"
+        print "\nExiting...\n"
 
 # standard boilerplate to run the main function
 if __name__ == '__main__':
-  main()
+    main()
