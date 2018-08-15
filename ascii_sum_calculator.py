@@ -21,7 +21,7 @@ param: s is the string to calculate
 return: the ASCII sum
 """
 
-    return sum(map(ord, ))
+    return sum(map(ord, s))
 
 def find_init(a_sum, table_size):
 """
