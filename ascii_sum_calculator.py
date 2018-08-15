@@ -14,16 +14,16 @@ location in the table, increment, and probe sequence for a user entered string
 with a user entered table size.
 """
 
-
+def find_ASCII(s):
 """
 Calculates the ASCII sum of the given string
 param: s is the string to calculate
 return: the ASCII sum
 """
-def find_ASCII(s):
 
-    return sum(map(ord, s))
+    return sum(map(ord, ))
 
+def find_init(a_sum, table_size):
 """
 Finds the initial hash location of the ASCII sum by modding the sum by the size
 of the table.
@@ -31,10 +31,10 @@ param: a_sum is the ASCII sum of the string to find location for
 param: table_size is the size of the table
 return: the initial location
 """
-def find_init(a_sum, table_size):
 
     return a_sum % table_size
 
+def find_incr(a_sum, table_size):
 """
 Finds the incrementor used in finding the probe sequence by modding the sum by
 the size of the table minus one and adding one to that total.
@@ -42,10 +42,10 @@ param: a_sum is the ASCII sum of the string to find the increment for
 param: table_size is the size of the table
 return: the increment value
 """
-def find_incr(a_sum, table_size):
 
     return (a_sum % (table_size - 1)) + 1
 
+def find_probe_sequence(init, incr, table_size):
 """
 Finds the probe sequence and saves it into a list. Every value besides the first
 is found by adding the previous answer plus the increment total and modding that
@@ -55,7 +55,6 @@ param: incr the number found from incr
 param: table_size is the size of the table
 return: a list containing the probe sequence
 """
-def find_probe_sequence(init, incr, table_size):
 
     # Use this variable later to figure out how many times to loop
     # Start at 2 because the table size will already be a minimum of 2
@@ -81,6 +80,7 @@ def find_probe_sequence(init, incr, table_size):
 
     return answer
 
+def get_table_size():
 """
 Function used once in main to get the desired size of the table from the user.
 Table size has to be at least 2 so that calculations aren't negative or do not
@@ -88,7 +88,6 @@ involve dividing by zero.
 return: the size of the table desired by the user for use in the rest of the
 program
 """
-def get_table_size():
 
     try:
 
@@ -115,12 +114,12 @@ def get_table_size():
 
     return table_size
 
+def get_string():
 """
 Function called in the while loop used to grab the string the user wants to
 find the information for.
 return: the user-entered string
 """
-def get_string():
 
     # Grab the user's string to convert
     usr_str = raw_input("Enter a string to find the ASCII sum of ('q' to quit):"
@@ -135,12 +134,11 @@ def get_string():
 
         return usr_str
 
+def main():
 """
 Main function of program. Runs an infinite loop and delegates towards other
 functions
 """
-def main():
-
     print
 
     try:
